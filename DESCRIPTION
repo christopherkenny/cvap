@@ -20,3 +20,5 @@ Imports:
     readr,
     stringr,
     tidyr
+URL: https://github.com/christopherkenny/cvap
+BugReports: https://github.com/christopherkenny/cvap/issues
