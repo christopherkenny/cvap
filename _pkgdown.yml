@@ -1,0 +1,20 @@
+url: https://www.christophertkenny.com/cvap
+template:
+  params:
+    bootswatch: journal
+reference:
+- title: "Download Processed Data"
+  desc: "Functions for downloading processed data across geographies"
+- contents:
+  - has_concept("download")
+- title: "Distribute from Block Group to Blocks"
+  desc: "Functions for estimating CVAP at lower levels"
+- contents:
+  - has_concept("distribute")
+- title: "Process Raw CVAP Data"
+  desc: "Functions for working with CVAP csv Files"
+- contents:
+  - has_concept("raw")
+- title: "Included Example Data"
+- contents:
+  - has_concept("data")
