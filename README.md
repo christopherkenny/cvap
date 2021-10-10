@@ -4,6 +4,8 @@
 # cvap
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/christopherkenny/cvap/workflows/R-CMD-check/badge.svg)](https://github.com/christopherkenny/cvap/actions)
 <!-- badges: end -->
 
 The goal of `cvap` is to work with Census citizen voting-age population
