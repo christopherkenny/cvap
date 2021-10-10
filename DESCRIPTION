@@ -1,5 +1,5 @@
 Package: cvap
-Title: Download US Census Citizen Voting Age Population 
+Title: Citizen Voting Age Population 
 Version: 0.0.1
 Authors@R: 
     person(given = "Christopher T.",
