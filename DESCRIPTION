@@ -1,20 +1,22 @@
 Package: cvap
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Download US Census Citizen Voting Age Population 
+Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Christopher T.",
+           family = "Kenny",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "christopherkenny@fas.harvard.edu",
+           comment = c(ORCID = "0000-0002-9386-6860"))
+Description: Works with the Citizen Voting Age Population special tabulation from the US Census Bureau. Provides tools to download and process raw data. Also provides a downloading interface to processed data. Implements a very basic approach to estimate block level citizen voting age population from block group data.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
+    censable,
+    cli,
+    dplyr,
     fs,
     magrittr,
     readr,
@@ -22,3 +24,5 @@ Imports:
     tidyr
 URL: https://github.com/christopherkenny/cvap
 BugReports: https://github.com/christopherkenny/cvap/issues
+Depends: 
+    R (>= 2.10)

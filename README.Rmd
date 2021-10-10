@@ -1,0 +1,84 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# cvap
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `cvap` is to work with Census citizen voting-age population (CVAP) data.
+
+## Installation
+<!--
+You can install the released version of cvap from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("cvap")
+```
+-->
+Install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("christopherkenny/cvap")
+```
+## Example
+
+The primary tools from this package are to first download CVAP data that's already processed.
+
+```{r example}
+library(cvap)
+de_cvap <- cvap_get('DE')
+```
+
+`de_cvap()` has options for the available geographies in the [Census special tabulation](https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.html).
+
+With that data, we can combine it with ACS and Decennial Census data to estimate block-level data.
+
+```{r, eval = FALSE}
+de_block <- censable::build_dec(geography = 'block', state = state, 
+                                year = 2010, geometry = FALSE)
+de_block_group <- censable::build_acs(geography = 'block group', state = 'DE', 
+                                      geometry = FALSE, year = 2019)
+```
+
+For example purposes, the 2010 Delaware Census block data is provided:
+```{r}
+data('de_block')
+```
+
+Along with the Delaware 2019 ACS data:
+```{r}
+data('de_block_group')
+```
+
+
+This allows us to distribute the block group data approximately between blocks.
+```{r}
+block_est <- cvap_distribute(de_cvap, de_block, de_block_group)
+```
+
+
+This workflow can also be combined into one function
+```{r, eval = FALSE}
+block_est <- cvap_distribute_censable('DE')
+```
+
+
+The resulting data has estimated CVAP data for each block:
+```{r}
+dplyr::glimpse(block_est)
+```
+Thus, using other packages like `PL94171`, we can easily aggregate this from blocks to VTDs, where CVAP is not directly provided.
