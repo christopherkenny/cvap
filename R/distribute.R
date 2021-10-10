@@ -59,6 +59,8 @@ cvap_distribute <- function(cvap, block, block_group) {
 
   props[sapply(props, simplify = 'matrix', is.infinite)] <- 0
 
+  props[props > 1] <- 1
+
   props <- props %>%
     dplyr::mutate(bg_GEOID = merged$GEOID)
 
