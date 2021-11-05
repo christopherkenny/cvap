@@ -17,14 +17,19 @@
 #'
 #' @md
 #' @examples
+#' \dontrun{
+#' # Requires API set up with tidycensus
 #' state <- 'DE'
 #' cvap <- cvap_get(state)
-#' # Requires API set up with tidycensus
-#' # de_block <- censable::build_dec(geography = 'block',
-#' # state = state, year = 2010, geometry = FALSE)
-#' # de_block_group <- censable::build_acs(geography = 'block group',
-#' # state = 'DE', geometry = FALSE, year = 2019)
-#' # use example data
+#' de_block <- censable::build_dec(geography = 'block',
+#' state = state, year = 2010, geometry = FALSE)
+#' de_block_group <- censable::build_acs(geography = 'block group',
+#' state = 'DE', geometry = FALSE, year = 2019)
+#' }
+#
+#' # Alternatively, using example data
+#' state <- 'DE'
+#' cvap <- cvap_get(state)
 #' data('de_block')
 #' data('de_block_group')
 #' cvap_block <- cvap_distribute(cvap, de_block, de_block_group)

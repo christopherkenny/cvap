@@ -1,6 +1,6 @@
 Package: cvap
 Title: Citizen Voting Age Population 
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports: 
     censable,
     cli,
@@ -22,7 +22,12 @@ Imports:
     readr,
     stringr,
     tidyr
-URL: https://github.com/christopherkenny/cvap, https://www.christophertkenny.com/cvap
+URL: https://github.com/christopherkenny/cvap,
+    https://www.christophertkenny.com/cvap/,
+    http://www.christophertkenny.com/cvap/
 BugReports: https://github.com/christopherkenny/cvap/issues
 Depends: 
     R (>= 2.10)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

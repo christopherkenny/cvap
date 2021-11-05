@@ -2,6 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # cvap
+<a href='http://www.christophertkenny.com/cvap'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 
@@ -13,13 +14,12 @@ The goal of `cvap` is to work with Census citizen voting-age population
 
 ## Installation
 
-<!--
-You can install the released version of cvap from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of cvap from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("cvap")
 ```
--->
 
 Install the development version from [GitHub](https://github.com/) with:
 
