@@ -116,3 +116,5 @@ dplyr::glimpse(block_est)
 
 Thus, using other packages like `PL94171`, we can easily aggregate this
 from blocks to VTDs, where CVAP is not directly provided.
+`vest_crosswalk` allows you to download a variant of VEST’s crosswalk
+that is computationally more favorable for R.
