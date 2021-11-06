@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Estimate CVAP at the Block Level — cvap_distribute • cvap</title>
+<title>Changelog • cvap</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,11 +46,7 @@
 
 
 
-<meta property="og:title" content="Estimate CVAP at the Block Level — cvap_distribute" />
-<meta property="og:description" content="Assuming citizenship homogeneity within block group race/ethnicity, estimates
-down from block groups to the block level, using the ratio of citizen voting
-age population to population in the ACS year used multiplied by the block population
-from the previous decennial census." />
+<meta property="og:title" content="Changelog" />
 <meta property="og:image" content="http://www.christophertkenny.com/cvap/logo.png" />
 
 
@@ -70,7 +66,7 @@ from the previous decennial census." />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -122,65 +118,26 @@ from the previous decennial census." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Estimate CVAP at the Block Level</h1>
-    <small class="dont-index">Source: <a href='https://github.com/christopherkenny/cvap/blob/master/R/distribute.R'><code>R/distribute.R</code></a></small>
-    <div class="hidden name"><code>cvap_distribute.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/christopherkenny/cvap/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Assuming citizenship homogeneity within block group race/ethnicity, estimates
-down from block groups to the block level, using the ratio of citizen voting
-age population to population in the ACS year used multiplied by the block population
-from the previous decennial census.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>cvap_distribute</span><span class='op'>(</span><span class='va'>cvap</span>, <span class='va'>block</span>, <span class='va'>block_group</span><span class='op'>)</span></pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>cvap</th>
-      <td><p>cvap data at the block group level, using default settings of <code>get_cvap()</code></p></td>
-    </tr>
-    <tr>
-      <th>block</th>
-      <td><p>block data data for the Census before the year of the cvap data</p></td>
-    </tr>
-    <tr>
-      <th>block_group</th>
-      <td><p>block group data for the same year (ending year, e.g.
-2015-2019 needs to be 2019)</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>cvap tibble estimated at the block level</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='co'># Requires API set up with tidycensus</span></span>
-<span class='r-in'><span class='va'>state</span> <span class='op'>&lt;-</span> <span class='st'>'DE'</span></span>
-<span class='r-in'><span class='va'>cvap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='cvap_get.html'>cvap_get</a></span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span></span>
-<span class='r-in'><span class='va'>de_block</span> <span class='op'>&lt;-</span> <span class='fu'>censable</span><span class='fu'>::</span><span class='fu'><a href='https://christopherkenny.github.io/censable/reference/build_dec.html'>build_dec</a></span><span class='op'>(</span>geography <span class='op'>=</span> <span class='st'>'block'</span>,</span>
-<span class='r-in'>state <span class='op'>=</span> <span class='va'>state</span>, year <span class='op'>=</span> <span class='fl'>2010</span>, geometry <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
-<span class='r-in'><span class='va'>de_block_group</span> <span class='op'>&lt;-</span> <span class='fu'>censable</span><span class='fu'>::</span><span class='fu'><a href='https://christopherkenny.github.io/censable/reference/build_acs.html'>build_acs</a></span><span class='op'>(</span>geography <span class='op'>=</span> <span class='st'>'block group'</span>,</span>
-<span class='r-in'>state <span class='op'>=</span> <span class='st'>'DE'</span>, geometry <span class='op'>=</span> <span class='cn'>FALSE</span>, year <span class='op'>=</span> <span class='fl'>2019</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
-<span class='r-in'><span class='co'># Alternatively, using example data</span></span>
-<span class='r-in'><span class='va'>state</span> <span class='op'>&lt;-</span> <span class='st'>'DE'</span></span>
-<span class='r-in'><span class='va'>cvap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='cvap_get.html'>cvap_get</a></span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>'de_block'</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>'de_block_group'</span><span class='op'>)</span></span>
-<span class='r-in'><span class='va'>cvap_block</span> <span class='op'>&lt;-</span> <span class='fu'>cvap_distribute</span><span class='op'>(</span><span class='va'>cvap</span>, <span class='va'>de_block</span>, <span class='va'>de_block_group</span><span class='op'>)</span></span>
-</pre>
+    <div id="cvap-003" class="section level1">
+<h1 class="page-header" data-toc-text="0.0.3">
+<a href="#cvap-003" class="anchor"></a>cvap 0.0.3</h1>
+<ul>
+<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
+<li>Fix logo link redirect</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 
