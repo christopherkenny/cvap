@@ -10,3 +10,7 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+
+## Additional Notes
+
+* Fixes url redirect from submission 0.0.2

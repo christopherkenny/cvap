@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # cvap
-<a href='http://www.christophertkenny.com/cvap'><img src='man/figures/logo.png' align="right" height="138" /></a>
+<a href='http://www.christophertkenny.com/cvap/'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 
