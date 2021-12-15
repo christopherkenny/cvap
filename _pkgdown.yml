@@ -1,8 +1,7 @@
 url: http://www.christophertkenny.com/cvap/
 template:
-  params:
-    bootswatch: journal
   bootstrap: 5
+  bootswatch: journal
 reference:
 - title: "Download Processed Data"
   desc: "Functions for downloading processed data across geographies"
