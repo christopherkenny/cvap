@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.christophertkenny.com/cvap//index.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/404.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_census_url.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_distribute.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/LICENSE.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_distribute_censable.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/authors.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_get.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/index.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_get_raw.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/news/index.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_process_dir.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_census_url.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/cvap_process_file.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_distribute.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/de_block.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_distribute_censable.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/de_block_group.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_get.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/pipe.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_get_raw.html</loc>
   </url>
   <url>
-    <loc>http://www.christophertkenny.com/cvap//reference/vest_crosswalk.html</loc>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_process_dir.html</loc>
+  </url>
+  <url>
+    <loc>http://www.christophertkenny.com/cvap/reference/cvap_process_file.html</loc>
+  </url>
+  <url>
+    <loc>http://www.christophertkenny.com/cvap/reference/de_block.html</loc>
+  </url>
+  <url>
+    <loc>http://www.christophertkenny.com/cvap/reference/de_block_group.html</loc>
+  </url>
+  <url>
+    <loc>http://www.christophertkenny.com/cvap/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.christophertkenny.com/cvap/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>http://www.christophertkenny.com/cvap/reference/vest_crosswalk.html</loc>
   </url>
 </urlset>
