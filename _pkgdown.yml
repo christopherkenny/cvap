@@ -19,3 +19,8 @@ reference:
 - title: "Included Example Data"
 - contents:
   - has_concept("data")
+- title: "Misc."
+  desc: "That which remains"
+- contents:
+  - lacks_concepts(c("download", "distribute", "raw", "data"))
+
