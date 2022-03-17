@@ -96,7 +96,7 @@ cvap_distribute <- function(cvap, block, block_group) {
 #' Calls `cvap_distribute` within.
 #'
 #' @param state character. The state to get data for or nation for the nation file.
-#' @param year numeric. Year for the data in 2009 to 2019.
+#' @param year numeric. Year for the data in 2009 to 2020.
 #'
 #' @return cvap tibble estimated at the block level
 #' @export
@@ -109,7 +109,7 @@ cvap_distribute <- function(cvap, block, block_group) {
 #' distribute_cvap_with_api('DE', 2019)
 #' }
 #'
-cvap_distribute_censable <- function(state, year = 2019) {
+cvap_distribute_censable <- function(state, year = 2020) {
   state <- censable::match_abb(state)
   b_year <- year - (year %% 10)
 

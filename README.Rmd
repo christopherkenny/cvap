@@ -44,7 +44,7 @@ library(cvap)
 de_cvap <- cvap_get('DE')
 ```
 
-`de_cvap()` has options for the available geographies in the [Census special tabulation](https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.html).
+`cvap_get()` has options for the available geographies in the [Census special tabulation](https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.html).
 
 With that data, we can combine it with ACS and Decennial Census data to estimate block-level data.
 

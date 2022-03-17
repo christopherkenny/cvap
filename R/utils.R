@@ -10,7 +10,7 @@ clean_LNTITLE <- function(data) {
     .data$LNTITLE == 'American Indian or Alaska Native and White' ~ 'white_aian',
     .data$LNTITLE == 'Asian and White' ~ 'white_asian',
     .data$LNTITLE == 'Black or African American and White' ~ 'white_black',
-    .data$LNTITLE == 'American Indian or Alaska Native and Black or African American' ~ 'black_aiain',
+    .data$LNTITLE == 'American Indian or Alaska Native and Black or African American' ~ 'black_aian',
     .data$LNTITLE == 'Remainder of Two or More Race Responses' ~ 'two',
     .data$LNTITLE == 'Hispanic or Latino' ~ 'hisp',
     TRUE ~ 'uh_oh'
@@ -34,8 +34,8 @@ validate_year <- function(year) {
     year <- year[1]
   }
 
-  if (year < 2009 || year > 2019) {
-    cli::cli_abort('Only years from 2009 to 2019 supported.')
+  if (year < 2009 || year > 2020) {
+    cli::cli_abort('Only years from 2009 to 2020 supported.')
   }
 
   year
@@ -54,7 +54,7 @@ validate_geography <- function(geography, year) {
     'blockgr', 'cd', 'county', 'place',
     'sldl', 'sldu', 'state', 'tract', 'nation'
   )
-  v_18_19 <- c(
+  v_18_20 <- c(
     'blockgr', 'cd', 'county', 'place',
     'sldlc', 'slduc', 'state', 'tract', 'nation'
   )
@@ -65,7 +65,7 @@ validate_geography <- function(geography, year) {
   if (year < 2018) {
     out <- v_09_17[which(geography == vals)]
   } else {
-    out <- v_18_19[which(geography == vals)]
+    out <- v_18_20[which(geography == vals)]
   }
 
   out

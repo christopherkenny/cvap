@@ -4,12 +4,12 @@
 \alias{cvap_distribute_censable}
 \title{Distribute CVAP at the Block Group and Download Data}
 \usage{
-cvap_distribute_censable(state, year = 2019)
+cvap_distribute_censable(state, year = 2020)
 }
 \arguments{
 \item{state}{character. The state to get data for or nation for the nation file.}
 
-\item{year}{numeric. Year for the data in 2009 to 2019.}
+\item{year}{numeric. Year for the data in 2009 to 2020.}
 }
 \value{
 cvap tibble estimated at the block level

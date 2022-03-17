@@ -1,7 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cvap <a href='http://www.christophertkenny.com/cvap/'><img src='man/figures/logo.png' align="right" height="138" /></a>
+# cvap
+<a href='http://www.christophertkenny.com/cvap/'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 
@@ -37,7 +38,7 @@ library(cvap)
 de_cvap <- cvap_get('DE')
 ```
 
-`de_cvap()` has options for the available geographies in the [Census
+`cvap_get()` has options for the available geographies in the [Census
 special
 tabulation](https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.html).
 
@@ -102,14 +103,14 @@ dplyr::glimpse(block_est)
 #> $ vap_nhpi   <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
 #> $ vap_other  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
 #> $ vap_two    <dbl> 1, 3, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-#> $ cvap       <dbl> 55.195093, 210.744901, 14.336388, 65.230565, 37.991428, 4.3~
-#> $ cvap_white <dbl> 41.4335408, 218.8941780, 15.6352984, 71.1406078, 39.0882461~
-#> $ cvap_black <dbl> 5.5450237, 3.0805687, 0.0000000, 0.0000000, 0.0000000, 0.00~
-#> $ cvap_hisp  <dbl> 2.3684211, 0.7894737, 0.0000000, 0.0000000, 0.7894737, 0.00~
-#> $ cvap_asian <dbl> 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+#> $ cvap       <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+#> $ cvap_white <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+#> $ cvap_black <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+#> $ cvap_hisp  <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
+#> $ cvap_asian <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
 #> $ cvap_aian  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
 #> $ cvap_nhpi  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
-#> $ cvap_two   <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+#> $ cvap_two   <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~
 #> $ cvap_other <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
 ```
 

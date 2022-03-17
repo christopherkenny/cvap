@@ -25,6 +25,6 @@ Process Census CVAP File
 }
 \examples{
 path <- fs::path_package('cvap', 'extdata', 'County.csv')
-cvap_process_file(path, year = 2019, out_dir = tempdir())
+cvap_process_file(path, year = 2020, out_dir = tempdir())
 }
 \concept{raw}
