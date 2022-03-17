@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
@@ -75,20 +75,8 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path_package.html" class="external-link">path_package</a></span><span class="op">(</span><span class="st">'cvap'</span>, <span class="st">'extdata'</span>, <span class="st">'County.csv'</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">cvap_process_file</span><span class="op">(</span><span class="va">path</span>, year <span class="op">=</span> <span class="fl">2019</span>, out_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 27</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   GEOID geoname        cvap cvap_aian cvap_asian cvap_black cvap_nhpi cvap_white</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 10001 Kent County… <span style="text-decoration: underline;">131</span>145       855       <span style="text-decoration: underline;">2</span>205      <span style="text-decoration: underline;">32</span>175       120      <span style="text-decoration: underline;">86</span>485</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 10003 New Castle … <span style="text-decoration: underline;">405</span>495      <span style="text-decoration: underline;">1</span>050      <span style="text-decoration: underline;">12</span>565      <span style="text-decoration: underline;">99</span>600       110     <span style="text-decoration: underline;">262</span>355</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 10005 Sussex Coun… <span style="text-decoration: underline;">173</span>640       660       <span style="text-decoration: underline;">1</span>740      <span style="text-decoration: underline;">18</span>960        60     <span style="text-decoration: underline;">143</span>940</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 19 more variables: cvap_white_aian &lt;dbl&gt;, cvap_white_asian &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cvap_white_black &lt;dbl&gt;, cvap_black_aiain &lt;dbl&gt;, cvap_two &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cvap_hisp &lt;dbl&gt;, cvap_moe &lt;dbl&gt;, cvap_moe_aian &lt;dbl&gt;, cvap_moe_asian &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cvap_moe_black &lt;dbl&gt;, cvap_moe_nhpi &lt;dbl&gt;, cvap_moe_white &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cvap_moe_white_aian &lt;dbl&gt;, cvap_moe_white_asian &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cvap_moe_white_black &lt;dbl&gt;, cvap_moe_black_aiain &lt;dbl&gt;, cvap_moe_two &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cvap_moe_hisp &lt;dbl&gt;, state &lt;chr&gt;</span></span>
+<span class="r-in"><span class="fu">cvap_process_file</span><span class="op">(</span><span class="va">path</span>, year <span class="op">=</span> <span class="fl">2020</span>, out_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in xzfile(file, ...):</span> invalid 'description' argument</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -100,7 +88,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer></div>

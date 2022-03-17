@@ -19,7 +19,7 @@ so totals may not sum properly, but will be close."><meta property="og:image" co
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
@@ -56,7 +56,7 @@ so totals may not sum properly, but will be close.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">cvap_get</span><span class="op">(</span>
   <span class="va">state</span>,
-  year <span class="op">=</span> <span class="fl">2019</span>,
+  year <span class="op">=</span> <span class="fl">2020</span>,
   geography <span class="op">=</span> <span class="st">"block group"</span>,
   out_file <span class="op">=</span> <span class="cn">NULL</span>,
   moe <span class="op">=</span> <span class="cn">FALSE</span>,
@@ -69,7 +69,7 @@ so totals may not sum properly, but will be close.</p>
     <dl><dt>state</dt>
 <dd><p>character. The state to get data for or nation for the nation file.</p></dd>
 <dt>year</dt>
-<dd><p>numeric. Year for the data in 2009 to 2019.</p></dd>
+<dd><p>numeric. Year for the data in 2009 to 2020.</p></dd>
 <dt>geography</dt>
 <dd><p>character. Level of geography. Default is 'block group'. See Details.</p></dd>
 <dt>out_file</dt>
@@ -99,20 +99,20 @@ so totals may not sum properly, but will be close.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">cvap_get</span><span class="op">(</span><span class="st">'DE'</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 574 × 10</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 706 × 10</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    GEOID     cvap cvap_white cvap_black cvap_hisp cvap_asian cvap_aian cvap_nhpi</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1000104…  <span style="text-decoration: underline;">2</span>425       <span style="text-decoration: underline;">2</span>135        130        55         60         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1000104…  <span style="text-decoration: underline;">1</span>575       <span style="text-decoration: underline;">1</span>430         90        20         15         0         4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1000104…  <span style="text-decoration: underline;">1</span>225        945        210         0         25        50         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1000104…  <span style="text-decoration: underline;">1</span>940       <span style="text-decoration: underline;">1</span>460        265       125         35        20         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1000104…  <span style="text-decoration: underline;">1</span>445        905        490        30          0         4         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1000104…  <span style="text-decoration: underline;">4</span>470       <span style="text-decoration: underline;">2</span>710       <span style="text-decoration: underline;">1</span>475        85         40         4         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1000104…  <span style="text-decoration: underline;">7</span>770       <span style="text-decoration: underline;">5</span>090       <span style="text-decoration: underline;">2</span>150       285         80         4         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1000104…  <span style="text-decoration: underline;">2</span>815       <span style="text-decoration: underline;">1</span>235       <span style="text-decoration: underline;">1</span>425       125          0         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1000104…  <span style="text-decoration: underline;">1</span>140       <span style="text-decoration: underline;">1</span>045         40        55          0         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1000104…  <span style="text-decoration: underline;">1</span>675       <span style="text-decoration: underline;">1</span>255        300       105          4         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 564 more rows, and 2 more variables: cvap_two &lt;dbl&gt;, cvap_other &lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> US10001…  <span style="text-decoration: underline;">1</span>145       <span style="text-decoration: underline;">1</span>025         95         4         10         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> US10001…  <span style="text-decoration: underline;">1</span>780       <span style="text-decoration: underline;">1</span>525        185         0         30        40         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> US10001…  <span style="text-decoration: underline;">1</span>360       <span style="text-decoration: underline;">1</span>195         25         0         50         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> US10001…   970        830         90        20         30         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> US10001…  <span style="text-decoration: underline;">1</span>870       <span style="text-decoration: underline;">1</span>255        405       115         65        10         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> US10001…   640        405        205        25          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> US10001…   880        535        315        15          0         4         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> US10001…  <span style="text-decoration: underline;">1</span>135        870        180        85          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> US10001…  <span style="text-decoration: underline;">1</span>070        530        435        75          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> US10001…  <span style="text-decoration: underline;">1</span>475        550        860        65          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 696 more rows, and 2 more variables: cvap_two &lt;dbl&gt;, cvap_other &lt;dbl&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -124,7 +124,7 @@ so totals may not sum properly, but will be close.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer></div>
