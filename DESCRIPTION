@@ -1,6 +1,7 @@
 Package: cvap
 Title: Citizen Voting Age Population 
-Version: 0.0.3
+Version: 0.0.4
+Date: 2022-03-17
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
