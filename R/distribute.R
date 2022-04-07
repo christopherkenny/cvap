@@ -32,17 +32,17 @@ cvap_distribute <- function(cvap, block) {
     dplyr::mutate(bg_GEOID = stringr::str_sub(string = .data$GEOID, 1, 12))
 
   matches <- match(block$bg_GEOID, cvap$GEOID)
-noms <- cvap %>%
-  dplyr::select(dplyr::starts_with('cvap')) %>%
-  names()
+  noms <- cvap %>%
+    dplyr::select(dplyr::starts_with('cvap')) %>%
+    names()
   b_cvap <- lapply(
     X = noms,
     FUN = function(name) {
-        what <- paste0('pop', stringr::str_sub(name, 5))
-        if (!what %in% names(block)) {
-          what <- 'pop'
-        }
-        estimate_down(wts = block[[what]], value = cvap[[name]], group = matches)
+      what <- paste0('pop', stringr::str_sub(name, 5))
+      if (!what %in% names(block)) {
+        what <- 'pop'
+      }
+      estimate_down(wts = block[[what]], value = cvap[[name]], group = matches)
     }
   ) %>%
     do.call(what = 'cbind') %>%
