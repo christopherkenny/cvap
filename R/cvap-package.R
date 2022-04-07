@@ -5,3 +5,6 @@ utils::globalVariables(c(
   'pop', 'pop_aian', 'pop_asian', 'pop_black', 'pop_hisp', 'pop_nhpi', 'pop_other',
   'pop_two', 'pop_white'
 ))
+
+#' @importFrom rlang .data
+NULL

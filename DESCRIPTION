@@ -22,6 +22,7 @@ Imports:
     magrittr,
     purrr,
     readr,
+    rlang,
     stringr,
     tidyr
 URL: https://github.com/christopherkenny/cvap,
