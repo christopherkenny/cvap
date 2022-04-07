@@ -4,24 +4,20 @@
 \alias{cvap_distribute}
 \title{Estimate CVAP at the Block Level}
 \usage{
-cvap_distribute(cvap, block, block_group)
+cvap_distribute(cvap, block)
 }
 \arguments{
 \item{cvap}{cvap data at the block group level, using default settings of \code{get_cvap()}}
 
-\item{block}{block data data for the Census before the year of the cvap data}
-
-\item{block_group}{block group data for the same year (ending year, e.g.
-2015-2019 needs to be 2019)}
+\item{block}{block data data for the Census before (or the same as) the year of the cvap data}
 }
 \value{
 cvap tibble estimated at the block level
 }
 \description{
 Assuming citizenship homogeneity within block group race/ethnicity, estimates
-down from block groups to the block level, using the ratio of citizen voting
-age population to population in the ACS year used multiplied by the block population
-from the previous decennial census.
+down from block groups to the block level, proportionally by group if possible,
+otherwise by total population.
 }
 \examples{
 \dontrun{
@@ -30,14 +26,11 @@ state <- 'DE'
 cvap <- cvap_get(state)
 de_block <- censable::build_dec(geography = 'block',
 state = state, year = 2010, geometry = FALSE)
-de_block_group <- censable::build_acs(geography = 'block group',
-state = 'DE', geometry = FALSE, year = 2019)
 }
 # Alternatively, using example data
 state <- 'DE'
 cvap <- cvap_get(state)
 data('de_block')
-data('de_block_group')
-cvap_block <- cvap_distribute(cvap, de_block, de_block_group)
+cvap_block <- cvap_distribute(cvap, de_block)
 }
 \concept{distribute}
