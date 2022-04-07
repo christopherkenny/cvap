@@ -62,6 +62,7 @@ noms <- cvap %>%
 #'
 #' @param state character. The state to get data for or nation for the nation file.
 #' @param year numeric. Year for the data in 2009 to 2020.
+#' @param clean Should variable names be standardized? Default is TRUE.
 #'
 #' @return cvap tibble estimated at the block level
 #' @export
@@ -71,14 +72,14 @@ noms <- cvap %>%
 #' @examples
 #' \dontrun{
 #' # Requires API set up with tidycensus or censable
-#' distribute_cvap_with_api('DE', 2019)
+#' cvap_distribute_censable('DE', 2019)
 #' }
 #'
-cvap_distribute_censable <- function(state, year = 2020) {
+cvap_distribute_censable <- function(state, year = 2020, clean = TRUE) {
   state <- censable::match_abb(state)
   b_year <- year - (year %% 10)
 
-  cvap <- cvap_get(state, year)
+  cvap <- cvap_get(state, year, clean = clean)
 
   block <- censable::build_dec(
     geography = 'block', state = state,
