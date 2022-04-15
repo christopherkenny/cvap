@@ -25,6 +25,6 @@ Process Directory of CVAP Files
 }
 \examples{
 path <- fs::path_package('cvap', 'extdata')
-cvap_process_dir(path, year = 2020, out_dir = tempdir())
+cvap_process_dir(path, year = 2019, out_dir = tempdir())
 }
 \concept{raw}

@@ -11,7 +11,7 @@
 #' @concept raw
 #' @examples
 #' path <- fs::path_package('cvap', 'extdata', 'County.csv')
-#' cvap_process_file(path, year = 2020, out_dir = tempdir())
+#' cvap_process_file(path, year = 2019, out_dir = tempdir())
 cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
   raw <- readr::read_csv(file = path, lazy = FALSE) %>%
     suppressMessages()
@@ -116,7 +116,7 @@ cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
 #' @concept raw
 #' @examples
 #' path <- fs::path_package('cvap', 'extdata')
-#' cvap_process_dir(path, year = 2020, out_dir = tempdir())
+#' cvap_process_dir(path, year = 2019, out_dir = tempdir())
 cvap_process_dir <- function(dir, year, out_dir, moe = TRUE, csv = FALSE) {
   files <- fs::dir_ls(path = dir, glob = '*.csv')
   lapply(files, function(p) {
