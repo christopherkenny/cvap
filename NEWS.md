@@ -1,3 +1,6 @@
+# cvap 0.1.2
+* Adds support for `cvap_distribute()` to distribute by 'vap'. Default remains 'pop'.
+
 # cvap 0.1.0
 * Adds support for 2020 CVAP estimates
 * Improves `cvap_distribute()` to avoid population loss, following the `geomander::estimate_down()` approach.

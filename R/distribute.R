@@ -7,6 +7,7 @@
 #'
 #' @param cvap cvap data at the block group level, using default settings of `get_cvap()`
 #' @param block block data data for the Census before (or the same as) the year of the cvap data
+#' @param wts 'pop' (default) or 'vap' for the group to distribute by.
 #'
 #' @return cvap tibble estimated at the block level
 #' @export
@@ -27,7 +28,8 @@
 #' cvap <- cvap_get(state)
 #' data('de_block')
 #' cvap_block <- cvap_distribute(cvap, de_block)
-cvap_distribute <- function(cvap, block) {
+cvap_distribute <- function(cvap, block, wts = 'pop') {
+  match.arg(wts, choices = c('pop', 'vap'))
   block <- block %>%
     dplyr::mutate(bg_GEOID = stringr::str_sub(string = .data$GEOID, 1, 12))
 
@@ -38,9 +40,9 @@ cvap_distribute <- function(cvap, block) {
   b_cvap <- lapply(
     X = noms,
     FUN = function(name) {
-      what <- paste0('pop', stringr::str_sub(name, 5))
+      what <- paste0(wts, stringr::str_sub(name, 5))
       if (!what %in% names(block)) {
-        what <- 'pop'
+        what <- wts
       }
       estimate_down(wts = block[[what]], value = cvap[[name]], group = matches)
     }
@@ -63,6 +65,7 @@ cvap_distribute <- function(cvap, block) {
 #' @param state character. The state to get data for or nation for the nation file.
 #' @param year numeric. Year for the data in 2009 to 2020.
 #' @param clean Should variable names be standardized? Default is TRUE.
+#' @param wts 'pop' (default) or 'vap' for the group to distribute by.
 #'
 #' @return cvap tibble estimated at the block level
 #' @export
@@ -75,7 +78,7 @@ cvap_distribute <- function(cvap, block) {
 #' cvap_distribute_censable('DE', 2019)
 #' }
 #'
-cvap_distribute_censable <- function(state, year = 2020, clean = TRUE) {
+cvap_distribute_censable <- function(state, year = 2020, clean = TRUE, wts = 'pop') {
   state <- censable::match_abb(state)
   b_year <- year - (year %% 10)
 
@@ -86,5 +89,5 @@ cvap_distribute_censable <- function(state, year = 2020, clean = TRUE) {
     year = b_year, geometry = FALSE
   )
 
-  cvap_distribute(cvap, block)
+  cvap_distribute(cvap, block, wts = wts)
 }
