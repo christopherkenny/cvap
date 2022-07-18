@@ -46,7 +46,7 @@ With that data, we can combine it with ACS and Decennial Census data to
 estimate block-level data.
 
 ``` r
-de_block <- censable::build_dec(geography = 'block', state = state, 
+de_block <- censable::build_dec(geography = 'block', state = 'DE', 
                                 year = 2010, geometry = FALSE)
 de_block_group <- censable::build_acs(geography = 'block group', state = 'DE', 
                                       geometry = FALSE, year = 2019)
