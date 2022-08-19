@@ -4,12 +4,14 @@
 \alias{cvap_distribute}
 \title{Estimate CVAP at the Block Level}
 \usage{
-cvap_distribute(cvap, block)
+cvap_distribute(cvap, block, wts = "pop")
 }
 \arguments{
 \item{cvap}{cvap data at the block group level, using default settings of \code{get_cvap()}}
 
 \item{block}{block data data for the Census before (or the same as) the year of the cvap data}
+
+\item{wts}{'pop' (default) or 'vap' for the group to distribute by.}
 }
 \value{
 cvap tibble estimated at the block level
