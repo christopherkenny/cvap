@@ -20,7 +20,6 @@ Imports:
     dplyr,
     fs,
     magrittr,
-    purrr,
     readr,
     rlang,
     stringr,
