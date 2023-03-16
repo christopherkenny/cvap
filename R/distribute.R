@@ -63,7 +63,7 @@ cvap_distribute <- function(cvap, block, wts = 'pop') {
 #' Calls `cvap_distribute` within.
 #'
 #' @param state character. The state to get data for or nation for the nation file.
-#' @param year numeric. Year for the data in 2009 to 2020.
+#' @param year numeric. Year for the data in 2009 to 2021.
 #' @param clean Should variable names be standardized? Default is TRUE.
 #' @param wts 'pop' (default) or 'vap' for the group to distribute by.
 #'
@@ -78,7 +78,7 @@ cvap_distribute <- function(cvap, block, wts = 'pop') {
 #' cvap_distribute_censable('DE', 2019)
 #' }
 #'
-cvap_distribute_censable <- function(state, year = 2020, clean = TRUE, wts = 'pop') {
+cvap_distribute_censable <- function(state, year = 2021, clean = TRUE, wts = 'pop') {
   state <- censable::match_abb(state)
   b_year <- year - (year %% 10)
 

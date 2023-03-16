@@ -4,12 +4,12 @@
 \alias{cvap_distribute_censable}
 \title{Distribute CVAP at the Block Group and Download Data}
 \usage{
-cvap_distribute_censable(state, year = 2020, clean = TRUE, wts = "pop")
+cvap_distribute_censable(state, year = 2021, clean = TRUE, wts = "pop")
 }
 \arguments{
 \item{state}{character. The state to get data for or nation for the nation file.}
 
-\item{year}{numeric. Year for the data in 2009 to 2020.}
+\item{year}{numeric. Year for the data in 2009 to 2021.}
 
 \item{clean}{Should variable names be standardized? Default is TRUE.}
 

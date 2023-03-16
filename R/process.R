@@ -46,7 +46,7 @@ cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
   }
 
   if (nrow(wide) > 1) {
-    if (year == 2020) {
+    if (year >= 2020) {
       wide <- wide %>% dplyr::mutate(GEOID = stringr::str_sub(GEOID, 3))
     }
     wide <- wide %>% dplyr::mutate(state = stringr::str_sub(GEOID, 1, 2))
@@ -119,9 +119,9 @@ cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
 #' cvap_process_dir(path, year = 2019, out_dir = tempdir())
 cvap_process_dir <- function(dir, year, out_dir, moe = TRUE, csv = FALSE) {
   files <- fs::dir_ls(path = dir, glob = '*.csv')
-  lapply(files, function(p) {
+  lapply(cli::cli_progress_along(files), function(i) {
     cvap_process_file(
-      path = p, year = year, out_dir = out_dir,
+      path = files[[i]], year = year, out_dir = out_dir,
       moe = moe, csv = csv
     )
   })

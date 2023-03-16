@@ -1,3 +1,6 @@
+# cvap 0.1.3
+* Adds support for 2021 CVAP estimates. Default year updated to 2021.
+
 # cvap 0.1.2
 * Adds support for `cvap_distribute()` to distribute by 'vap'. Default remains 'pop'.
 
