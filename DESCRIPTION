@@ -25,7 +25,7 @@ Imports:
     stringr,
     tidyr
 URL: https://github.com/christopherkenny/cvap,
-    https://www.christophertkenny.com/cvap/
+    https://christophertkenny.com/cvap/
 BugReports: https://github.com/christopherkenny/cvap/issues
 Depends: 
     R (>= 2.10)
