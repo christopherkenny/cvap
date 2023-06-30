@@ -1,3 +1,6 @@
+# cvap 0.1.4
+* Resolves a testing error on CRAN
+
 # cvap 0.1.3
 * Adds support for 2021 CVAP estimates. Default year updated to 2021.
 * Adds a new option to include the "implied" total of the `cvap` columns in `cvap_distribute()` and `cvap_distribute_censable()`. It is named `impl_cvap` and resolves (#2).
