@@ -32,12 +32,12 @@
 #'
 cvap_distribute <- function(cvap, block, wts = 'pop', include_implied = TRUE) {
   match.arg(wts, choices = c('pop', 'vap'))
-  block <- block %>%
+  block <- block |>
     dplyr::mutate(bg_GEOID = stringr::str_sub(string = .data$GEOID, 1, 12))
 
   matches <- match(block$bg_GEOID, cvap$GEOID)
-  noms <- cvap %>%
-    dplyr::select(dplyr::starts_with('cvap')) %>%
+  noms <- cvap |>
+    dplyr::select(dplyr::starts_with('cvap')) |>
     names()
   b_cvap <- lapply(
     X = noms,
@@ -48,20 +48,20 @@ cvap_distribute <- function(cvap, block, wts = 'pop', include_implied = TRUE) {
       }
       estimate_down(wts = block[[what]], value = cvap[[name]], group = matches)
     }
-  ) %>%
-    do.call(what = 'cbind') %>%
-    `colnames<-`(value = noms) %>%
+  ) |>
+    do.call(what = 'cbind') |>
+    `colnames<-`(value = noms) |>
     dplyr::as_tibble()
 
-  out <- block %>%
+  out <- block |>
     dplyr::bind_cols(
       b_cvap
     )
 
   if (include_implied) {
-    out$impl_cvap <- out %>%
-      dplyr::select(dplyr::starts_with('cvap_')) %>%
-      as.matrix() %>%
+    out$impl_cvap <- out |>
+      dplyr::select(dplyr::starts_with('cvap_')) |>
+      as.matrix() |>
       rowSums()
   }
 

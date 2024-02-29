@@ -13,7 +13,7 @@
 #' path <- fs::path_package('cvap', 'extdata', 'County.csv')
 #' cvap_process_file(path, year = 2019, out_dir = tempdir())
 cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
-  raw <- readr::read_csv(file = path, lazy = FALSE) %>%
+  raw <- readr::read_csv(file = path, lazy = FALSE) |>
     suppressMessages()
 
   geography <- fs::path_file(fs::path_ext_remove(path))
@@ -23,17 +23,17 @@ cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
     vals <- vals[-3:-4]
   }
 
-  wide <- raw %>%
-    dplyr::rename_with(toupper) %>%
-    dplyr::mutate(GEOID = stringr::str_sub(GEOID, 8)) %>%
-    clean_LNTITLE() %>%
-    clean_cvap_names() %>%
-    dplyr::filter(lntitle != 'not_hisp') %>%
+  wide <- raw |>
+    dplyr::rename_with(toupper) |>
+    dplyr::mutate(GEOID = stringr::str_sub(GEOID, 8)) |>
+    clean_LNTITLE() |>
+    clean_cvap_names() |>
+    dplyr::filter(lntitle != 'not_hisp') |>
     tidyr::pivot_wider(
       id_cols = c(GEOID, geoname),
       names_from = lntitle,
       values_from = dplyr::all_of(vals)
-    ) %>%
+    ) |>
     dplyr::rename_with(
       .fn = function(x) {
         stringr::str_sub(x, end = -2)
@@ -42,14 +42,14 @@ cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
     )
 
   if (!moe) {
-    wide <- wide %>% dplyr::select(-dplyr::ends_with('_moe'))
+    wide <- wide |> dplyr::select(-dplyr::ends_with('_moe'))
   }
 
   if (nrow(wide) > 1) {
     if (year >= 2020) {
-      wide <- wide %>% dplyr::mutate(GEOID = stringr::str_sub(GEOID, 3))
+      wide <- wide |> dplyr::mutate(GEOID = stringr::str_sub(GEOID, 3))
     }
-    wide <- wide %>% dplyr::mutate(state = stringr::str_sub(GEOID, 1, 2))
+    wide <- wide |> dplyr::mutate(state = stringr::str_sub(GEOID, 1, 2))
 
   } else {
     fs::dir_create(out_dir, 'nation')
@@ -73,8 +73,8 @@ cvap_process_file <- function(path, year, out_dir, moe = TRUE, csv = FALSE) {
     return(wide)
   }
 
-  wide_list <- wide %>%
-    dplyr::group_by(state) %>%
+  wide_list <- wide |>
+    dplyr::group_by(state) |>
     dplyr::group_split()
 
   lapply(cli::cli_progress_along(wide_list), function(i) {

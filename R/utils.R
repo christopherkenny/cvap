@@ -1,5 +1,5 @@
 clean_LNTITLE <- function(data) {
-  data %>% dplyr::mutate(LNTITLE = dplyr::case_when(
+  data |> dplyr::mutate(LNTITLE = dplyr::case_when(
     .data$LNTITLE == 'Total' ~ '',
     .data$LNTITLE == 'Not Hispanic or Latino' ~ 'not_hisp',
     .data$LNTITLE == 'American Indian or Alaska Native Alone' ~ 'aian',
@@ -19,8 +19,8 @@ clean_LNTITLE <- function(data) {
 
 clean_cvap_names <- function(data) {
   noms <- names(data)
-  noms <- noms %>%
-    stringr::str_remove('_EST') %>%
+  noms <- noms |>
+    stringr::str_remove('_EST') |>
     stringr::str_to_lower()
   noms[noms == 'geoid'] <- 'GEOID'
   names(data) <- noms

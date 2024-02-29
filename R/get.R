@@ -51,17 +51,17 @@ cvap_get <- function(state, year = 2022, geography = 'block group', out_file = N
   out <- readr::read_rds(out_file)
 
   if (!moe) {
-    out <- out %>% dplyr::select(-dplyr::contains('_moe'))
+    out <- out |> dplyr::select(-dplyr::contains('_moe'))
   }
 
   if (clean) {
-    out <- out %>%
+    out <- out |>
       dplyr::select(dplyr::any_of(c(
         'GEOID', 'cvap', 'cvap_white', 'cvap_black',
         'cvap_hisp', 'cvap_asian', 'cvap_aian', 'cvap_nhpi', 'cvap_two'
-      ))) %>%
-      dplyr::rowwise() %>%
-      dplyr::mutate(cvap_other = max(cvap - cvap_white - cvap_black - cvap_hisp - cvap_asian - cvap_aian - cvap_nhpi - cvap_two, 0)) %>%
+      ))) |>
+      dplyr::rowwise() |>
+      dplyr::mutate(cvap_other = max(cvap - cvap_white - cvap_black - cvap_hisp - cvap_asian - cvap_aian - cvap_nhpi - cvap_two, 0)) |>
       dplyr::ungroup()
     readr::write_rds(out, out_file, 'xz')
   }
