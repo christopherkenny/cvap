@@ -1,3 +1,6 @@
+# cvap 0.1.5
+* Adds support for 2022 CVAP estimates. Default year updated to 2022.
+
 # cvap 0.1.4
 * Resolves a testing error on CRAN
 
