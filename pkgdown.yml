@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-02-29T23:57Z
+last_built: 2024-03-21T22:52Z
 urls:
   reference: http://www.christophertkenny.com/cvap/reference
   article: http://www.christophertkenny.com/cvap/articles
