@@ -67,12 +67,7 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="cvap">cvap<a class="anchor" aria-label="anchor" href="#cvap"></a>
-</h1>
-</div>
-<p><a href="https://christophertkenny.com/cvap/" class="external-link"><img src="reference/figures/logo.png" align="right" height="138"></a></p>
+  <main id="main" class="col-md-9"><p># cvap <a href="https://christophertkenny.com/cvap/" class="external-link"><img src="reference/figures/logo.png" align="right" height="138"></a></p>
 <!-- badges: start -->
 
 <p>The goal of <code>cvap</code> is to work with Census citizen voting-age population (CVAP) data.</p>
@@ -109,47 +104,77 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'de_block_group'</span><span class="op">)</span></span></code></pre></div>
 <p>This allows us to distribute the block group data approximately between blocks.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">block_est</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cvap_distribute.html">cvap_distribute</a></span><span class="op">(</span><span class="va">de_cvap</span>, <span class="va">de_block</span>, <span class="va">de_block_group</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">block_est</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cvap_distribute.html">cvap_distribute</a></span><span class="op">(</span><span class="va">de_cvap</span>, <span class="va">de_block_group</span><span class="op">)</span></span>
+<span><span class="co">#&gt; New names:</span></span>
+<span><span class="co">#&gt; • `cvap` -&gt; `cvap...21`</span></span>
+<span><span class="co">#&gt; • `cvap_white` -&gt; `cvap_white...22`</span></span>
+<span><span class="co">#&gt; • `cvap_black` -&gt; `cvap_black...23`</span></span>
+<span><span class="co">#&gt; • `cvap_hisp` -&gt; `cvap_hisp...24`</span></span>
+<span><span class="co">#&gt; • `cvap_aian` -&gt; `cvap_aian...25`</span></span>
+<span><span class="co">#&gt; • `cvap_asian` -&gt; `cvap_asian...26`</span></span>
+<span><span class="co">#&gt; • `cvap_nhpi` -&gt; `cvap_nhpi...27`</span></span>
+<span><span class="co">#&gt; • `cvap_other` -&gt; `cvap_other...28`</span></span>
+<span><span class="co">#&gt; • `cvap_two` -&gt; `cvap_two...29`</span></span>
+<span><span class="co">#&gt; • `cvap` -&gt; `cvap...31`</span></span>
+<span><span class="co">#&gt; • `cvap_white` -&gt; `cvap_white...32`</span></span>
+<span><span class="co">#&gt; • `cvap_black` -&gt; `cvap_black...33`</span></span>
+<span><span class="co">#&gt; • `cvap_hisp` -&gt; `cvap_hisp...34`</span></span>
+<span><span class="co">#&gt; • `cvap_asian` -&gt; `cvap_asian...35`</span></span>
+<span><span class="co">#&gt; • `cvap_aian` -&gt; `cvap_aian...36`</span></span>
+<span><span class="co">#&gt; • `cvap_nhpi` -&gt; `cvap_nhpi...37`</span></span>
+<span><span class="co">#&gt; • `cvap_two` -&gt; `cvap_two...38`</span></span>
+<span><span class="co">#&gt; • `cvap_other` -&gt; `cvap_other...39`</span></span></code></pre></div>
 <p>This workflow can also be combined into one function</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">block_est</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cvap_distribute_censable.html">cvap_distribute_censable</a></span><span class="op">(</span><span class="st">'DE'</span><span class="op">)</span></span></code></pre></div>
 <p>The resulting data has estimated CVAP data for each block:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">block_est</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 24,115</span></span>
-<span><span class="co">#&gt; Columns: 29</span></span>
-<span><span class="co">#&gt; $ GEOID      &lt;chr&gt; "100010401001000", "100010401001001", "100010401001002", "1~</span></span>
-<span><span class="co">#&gt; $ NAME       &lt;chr&gt; "Block 1000, Block Group 1, Census Tract 401, Kent County, ~</span></span>
-<span><span class="co">#&gt; $ pop        &lt;dbl&gt; 77, 294, 20, 91, 53, 6, 50, 0, 0, 21, 294, 19, 0, 23, 42, 0~</span></span>
-<span><span class="co">#&gt; $ pop_white  &lt;dbl&gt; 53, 280, 20, 91, 50, 6, 47, 0, 0, 19, 261, 18, 0, 23, 41, 0~</span></span>
-<span><span class="co">#&gt; $ pop_black  &lt;dbl&gt; 9, 5, 0, 0, 0, 0, 3, 0, 0, 0, 19, 1, 0, 0, 1, 0, 1, 0, 0, 1~</span></span>
-<span><span class="co">#&gt; $ pop_hisp   &lt;dbl&gt; 9, 3, 0, 0, 3, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 7,~</span></span>
-<span><span class="co">#&gt; $ pop_aian   &lt;dbl&gt; 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ pop_asian  &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ pop_nhpi   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ pop_other  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ pop_two    &lt;dbl&gt; 4, 5, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 0, 0, 0, 0, 2, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ vap        &lt;dbl&gt; 48, 223, 12, 64, 44, 6, 42, 0, 0, 14, 203, 13, 0, 13, 30, 0~</span></span>
-<span><span class="co">#&gt; $ vap_white  &lt;dbl&gt; 36, 214, 12, 64, 42, 6, 40, 0, 0, 13, 179, 12, 0, 13, 29, 0~</span></span>
-<span><span class="co">#&gt; $ vap_black  &lt;dbl&gt; 4, 4, 0, 0, 0, 0, 2, 0, 0, 0, 14, 1, 0, 0, 1, 0, 1, 0, 0, 1~</span></span>
-<span><span class="co">#&gt; $ vap_hisp   &lt;dbl&gt; 5, 1, 0, 0, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 2,~</span></span>
-<span><span class="co">#&gt; $ vap_aian   &lt;dbl&gt; 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ vap_asian  &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ vap_nhpi   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ vap_other  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ vap_two    &lt;dbl&gt; 1, 3, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ cvap       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~</span></span>
-<span><span class="co">#&gt; $ cvap_white &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~</span></span>
-<span><span class="co">#&gt; $ cvap_black &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~</span></span>
-<span><span class="co">#&gt; $ cvap_hisp  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~</span></span>
-<span><span class="co">#&gt; $ cvap_asian &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~</span></span>
-<span><span class="co">#&gt; $ cvap_aian  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ cvap_nhpi  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span>
-<span><span class="co">#&gt; $ cvap_two   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,~</span></span>
-<span><span class="co">#&gt; $ cvap_other &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~</span></span></code></pre></div>
+<span><span class="co">#&gt; Rows: 574</span></span>
+<span><span class="co">#&gt; Columns: 40</span></span>
+<span><span class="co">#&gt; $ GEOID           &lt;chr&gt; "100030101042", "100010412002", "100010411002", "10001…</span></span>
+<span><span class="co">#&gt; $ NAME            &lt;chr&gt; "Block Group 2, Census Tract 101.04, New Castle County…</span></span>
+<span><span class="co">#&gt; $ pop             &lt;dbl&gt; 1909, 2595, 1068, 2852, 0, 473, 63, 35, 53, 781, 57, 2…</span></span>
+<span><span class="co">#&gt; $ pop_white       &lt;dbl&gt; 1006, 1067, 713, 1986, 0, 459, 56, 35, 51, 745, 57, 26…</span></span>
+<span><span class="co">#&gt; $ pop_black       &lt;dbl&gt; 629, 932, 94, 297, 0, 0, 0, 0, 0, 20, 0, 0, 0, 278, 73…</span></span>
+<span><span class="co">#&gt; $ pop_hisp        &lt;dbl&gt; 244, 103, 242, 451, 0, 7, 7, 0, 0, 5, 0, 6, 0, 240, 95…</span></span>
+<span><span class="co">#&gt; $ pop_aian        &lt;dbl&gt; 0, 0, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0…</span></span>
+<span><span class="co">#&gt; $ pop_asian       &lt;dbl&gt; 0, 376, 4, 8, 0, 7, 0, 0, 2, 4, 0, 0, 0, 488, 74, 0, 0…</span></span>
+<span><span class="co">#&gt; $ pop_nhpi        &lt;dbl&gt; 0, 19, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…</span></span>
+<span><span class="co">#&gt; $ pop_other       &lt;dbl&gt; 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…</span></span>
+<span><span class="co">#&gt; $ pop_two         &lt;dbl&gt; 30, 82, 10, 75, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 77, 0, 0…</span></span>
+<span><span class="co">#&gt; $ vap             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_white       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_black       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_hisp        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_aian        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_asian       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_nhpi        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_other       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ vap_two         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap...21       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_white...22 &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_black...23 &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_hisp...24  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_aian...25  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_asian...26 &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_nhpi...27  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_other...28 &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ cvap_two...29   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">#&gt; $ bg_GEOID        &lt;chr&gt; "100030101042", "100010412002", "100010411002", "10001…</span></span>
+<span><span class="co">#&gt; $ cvap...31       &lt;dbl&gt; 1120, 805, 0, 0, 0, 545, 155, 20, 35, 710, 250, 350, 2…</span></span>
+<span><span class="co">#&gt; $ cvap_white...32 &lt;dbl&gt; 630, 415, 0, 0, 0, 535, 150, 20, 30, 605, 250, 270, 25…</span></span>
+<span><span class="co">#&gt; $ cvap_black...33 &lt;dbl&gt; 350, 150, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 140, 0, 0,…</span></span>
+<span><span class="co">#&gt; $ cvap_hisp...34  &lt;dbl&gt; 120, 15, 0, 0, 0, 4, 4, 0, 4, 15, 0, 4, 0, 265, 310, 0…</span></span>
+<span><span class="co">#&gt; $ cvap_asian...35 &lt;dbl&gt; 0, 35, 0, 0, 0, 4, 0, 0, 4, 4, 0, 0, 0, 45, 0, 0, 195,…</span></span>
+<span><span class="co">#&gt; $ cvap_aian...36  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 75, 0, 4, 0, 10, 0, 0, 0, 0…</span></span>
+<span><span class="co">#&gt; $ cvap_nhpi...37  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
+<span><span class="co">#&gt; $ cvap_two...38   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0,…</span></span>
+<span><span class="co">#&gt; $ cvap_other...39 &lt;dbl&gt; 20, 190, 0, 0, 0, 2, 1, 0, 0, 0, 0, 72, 0, 45, 0, 0, 2…</span></span>
+<span><span class="co">#&gt; $ impl_cvap       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span></code></pre></div>
 <p>Thus, using other packages like <code>PL94171</code>, we can easily aggregate this from blocks to VTDs, where CVAP is not directly provided. <code>vest_crosswalk</code> allows you to download a variant of VEST’s crosswalk that is computationally more favorable for R.</p>
 </div>
-</div>
+
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
@@ -185,7 +210,10 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/christopherkenny/cvap/actions" class="external-link"><img src="https://github.com/christopherkenny/cvap/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://CRAN.R-project.org/package=cvap" class="external-link"><img src="https://www.r-pkg.org/badges/version/cvap" alt="CRAN status"></a></li>
+<li><a href="https://christopherkenny.r-universe.dev/cvap" class="external-link"><img src="https://christopherkenny.r-universe.dev/badges/cvap" alt="cvap status badge"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://github.com/christopherkenny/cvap/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/christopherkenny/cvap/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 
