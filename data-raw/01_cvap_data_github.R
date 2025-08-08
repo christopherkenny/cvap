@@ -23,12 +23,17 @@ for (yr in 2011:2019) {
 dir <- 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2016-2020_ACS_csv_files'
 cvap_process_dir(dir, year = 2020, out_dir = '~/GitHub/cvap_data')
 
-dir <- 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2017-2022_ACS_csv_files'
-curl::curl_download(cvap_census_url(year = 2022), destfile = 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2017-2022_ACS_csv_files.zip')
-zip::unzip('~/../Downloads/CVAP_2017-2022_ACS_csv_files.zip', exdir = dir)
-cvap_process_dir(dir, year = 2022, out_dir = '~/GitHub/cvap_data')
+dir <- 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2017-2021_ACS_csv_files'
+curl::curl_download(cvap_census_url(year = 2021), destfile = 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2017-2022_ACS_csv_files.zip')
+zip::unzip('~/../Downloads/CVAP_2017-2021_ACS_csv_files.zip', exdir = dir)
+cvap_process_dir(dir, year = 2021, out_dir = '~/GitHub/cvap_data')
 
 dir <- 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2018-2022_ACS_csv_files'
 curl::curl_download(cvap_census_url(year = 2022), destfile = 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2018-2022_ACS_csv_files.zip')
 zip::unzip('C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2018-2022_ACS_csv_files.zip', exdir = dir)
 cvap_process_dir(dir, year = 2022, out_dir = '~/GitHub/cvap_data')
+
+dir <- 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2019-2023_ACS_csv_files'
+curl::curl_download(cvap_census_url(year = 2023), destfile = 'C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2019-2023_ACS_csv_files.zip')
+zip::unzip('C:/Users/chris/OneDrive - Harvard University/CVAP/CVAP_2019-2023_ACS_csv_files.zip', exdir = dir)
+cvap_process_dir(dir, year = 2023, out_dir = '~/GitHub/cvap_data')

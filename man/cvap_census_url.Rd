@@ -4,10 +4,10 @@
 \alias{cvap_census_url}
 \title{Get Zip File URL for CVAP Special Tabulation Data}
 \usage{
-cvap_census_url(year = 2022)
+cvap_census_url(year = 2023)
 }
 \arguments{
-\item{year}{numeric. Year for the data in 2009 to 2022.}
+\item{year}{numeric. Year for the data in 2009 to 2023.}
 }
 \value{
 string

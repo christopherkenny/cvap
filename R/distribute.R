@@ -74,7 +74,7 @@ cvap_distribute <- function(cvap, block, wts = 'pop', include_implied = TRUE) {
 #' Calls `cvap_distribute` within.
 #'
 #' @param state character. The state to get data for or nation for the nation file.
-#' @param year numeric. Year for the data in 2009 to 2022.
+#' @param year numeric. Year for the data in 2009 to 2023.
 #' @param clean Should variable names be standardized? Default is TRUE.
 #' @param wts 'pop' (default) or 'vap' for the group to distribute by.
 #' @param include_implied logical if a column for the implied total (`impl_cvap`) should be included. Default is `TRUE`
@@ -90,7 +90,7 @@ cvap_distribute <- function(cvap, block, wts = 'pop', include_implied = TRUE) {
 #' cvap_distribute_censable('DE', 2019)
 #' }
 #'
-cvap_distribute_censable <- function(state, year = 2022, clean = TRUE, wts = 'pop', include_implied = TRUE) {
+cvap_distribute_censable <- function(state, year = 2023, clean = TRUE, wts = 'pop', include_implied = TRUE) {
   state <- censable::match_abb(state)
   b_year <- year - (year %% 10)
 

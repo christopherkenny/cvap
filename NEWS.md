@@ -1,3 +1,6 @@
+# cvap 0.1.6
+* Adds support for 2023 CVAP estimates. Default year updated to 2023.
+
 # cvap 0.1.5
 * Adds support for 2022 CVAP estimates. Default year updated to 2022.
 

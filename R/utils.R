@@ -34,8 +34,8 @@ validate_year <- function(year) {
     year <- year[1]
   }
 
-  if (year < 2009 || year > 2022) {
-    cli::cli_abort('Only years from 2009 to 2022 supported.')
+  if (year < 2009 || year > 2023) {
+    cli::cli_abort('Only years from 2009 to 2023 supported.')
   }
 
   year

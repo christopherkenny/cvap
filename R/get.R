@@ -16,7 +16,7 @@
 #' - 'nation': nation-wide data
 #'
 #' @param state character. The state to get data for or nation for the nation file.
-#' @param year numeric. Year for the data in 2009 to 2022.
+#' @param year numeric. Year for the data in 2009 to 2023.
 #' @param geography character. Level of geography. Default is 'block group'. See Details.
 #' @param out_file file to save downloaded rds to
 #' @param moe Include margin of error? Default is FALSE.
@@ -29,7 +29,7 @@
 #'
 #' @examples
 #' cvap_get('DE')
-cvap_get <- function(state, year = 2022, geography = 'block group', out_file = NULL, moe = FALSE, clean = TRUE) {
+cvap_get <- function(state, year = 2023, geography = 'block group', out_file = NULL, moe = FALSE, clean = TRUE) {
   base_url <- 'https://github.com/christopherkenny/cvap_data/raw/main/'
   year <- validate_year(year)
   geography <- validate_geography(geography, year)

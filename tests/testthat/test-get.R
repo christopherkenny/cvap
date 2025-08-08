@@ -17,3 +17,8 @@ test_that("cvap_get default works year 2022", {
   de <- cvap_get('DE', year = 2022)
   expect_equal(sum(de$cvap), 746145)
 })
+
+test_that("cvap_get default works year 2023", {
+  de <- cvap_get('DE', year = 2023)
+  expect_equal(sum(de$cvap), 751510)
+})

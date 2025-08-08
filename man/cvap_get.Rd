@@ -6,7 +6,7 @@
 \usage{
 cvap_get(
   state,
-  year = 2022,
+  year = 2023,
   geography = "block group",
   out_file = NULL,
   moe = FALSE,
@@ -16,7 +16,7 @@ cvap_get(
 \arguments{
 \item{state}{character. The state to get data for or nation for the nation file.}
 
-\item{year}{numeric. Year for the data in 2009 to 2022.}
+\item{year}{numeric. Year for the data in 2009 to 2023.}
 
 \item{geography}{character. Level of geography. Default is 'block group'. See Details.}
 
