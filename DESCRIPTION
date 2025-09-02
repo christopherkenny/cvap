@@ -1,12 +1,12 @@
 Package: cvap
 Title: Citizen Voting Age Population
 Version: 0.1.6
-Date: 2025-08-08
+Date: 2025-09-02
 Authors@R:
     person(given = "Christopher T.",
            family = "Kenny",
            role = c("aut", "cre"),
-           email = "christopherkenny@fas.harvard.edu",
+           email = "ctkenny@proton.me",
            comment = c(ORCID = "0000-0002-9386-6860"))
 Description: Works with the Citizen Voting Age Population special tabulation from the US Census Bureau <https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.html>. Provides tools to download and process raw data. Also provides a downloading interface to processed data. Implements a very basic approach to estimate block level citizen voting age population from block group data.
 License: MIT + file LICENSE
