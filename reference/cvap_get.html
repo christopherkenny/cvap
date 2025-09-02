@@ -9,7 +9,7 @@ so totals may not sum properly, but will be close."><meta property="og:image" co
 
     <a class="navbar-brand me-2" href="../index.html">cvap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.6</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ so totals may not sum properly, but will be close."><meta property="og:image" co
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Download Processed Citizen Voting Age Population Data</h1>
-      <small class="dont-index">Source: <a href="https://github.com/christopherkenny/cvap/blob/v0.1.5/R/get.R" class="external-link"><code>R/get.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/christopherkenny/cvap/blob/main/R/get.R" class="external-link"><code>R/get.R</code></a></small>
       <div class="d-none name"><code>cvap_get.Rd</code></div>
     </div>
 
@@ -43,7 +43,7 @@ so totals may not sum properly, but will be close.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cvap_get</span><span class="op">(</span></span>
 <span>  <span class="va">state</span>,</span>
-<span>  year <span class="op">=</span> <span class="fl">2022</span>,</span>
+<span>  year <span class="op">=</span> <span class="fl">2023</span>,</span>
 <span>  geography <span class="op">=</span> <span class="st">"block group"</span>,</span>
 <span>  out_file <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  moe <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -60,7 +60,7 @@ so totals may not sum properly, but will be close.</p>
 
 
 <dt id="arg-year">year<a class="anchor" aria-label="anchor" href="#arg-year"></a></dt>
-<dd><p>numeric. Year for the data in 2009 to 2022.</p></dd>
+<dd><p>numeric. Year for the data in 2009 to 2023.</p></dd>
 
 
 <dt id="arg-geography">geography<a class="anchor" aria-label="anchor" href="#arg-geography"></a></dt>
@@ -102,16 +102,16 @@ so totals may not sum properly, but will be close.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 706 × 10</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    GEOID     cvap cvap_white cvap_black cvap_hisp cvap_asian cvap_aian cvap_nhpi</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1000104…  <span style="text-decoration: underline;">1</span>070        940         15        90         20         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1000104…  <span style="text-decoration: underline;">1</span>710       <span style="text-decoration: underline;">1</span>475        215        15          0         4         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1000104…  <span style="text-decoration: underline;">1</span>460       <span style="text-decoration: underline;">1</span>335         45         0         30         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1000104…   940        735        115        70         20         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1000104…  <span style="text-decoration: underline;">1</span>955       <span style="text-decoration: underline;">1</span>395        395       100         30         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1000104…   635        455        170        10          0         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1000104…  <span style="text-decoration: underline;">1</span>090        555        400         0          4         4         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1000104…   970        695        210        65          0         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1000104…  <span style="text-decoration: underline;">1</span>110        480        335       270         20         0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1000104…  <span style="text-decoration: underline;">1</span>940        810        935       195          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1000104…  <span style="text-decoration: underline;">1</span>245       <span style="text-decoration: underline;">1</span>115         35        90          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1000104…  <span style="text-decoration: underline;">1</span>795       <span style="text-decoration: underline;">1</span>600        180        15          0         4         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1000104…  <span style="text-decoration: underline;">1</span>435       <span style="text-decoration: underline;">1</span>330        105         0          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1000104…   890        725         95        65          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1000104…  <span style="text-decoration: underline;">1</span>715       <span style="text-decoration: underline;">1</span>260        335        80         25         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1000104…   710        470        225        15          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1000104…  <span style="text-decoration: underline;">1</span>370        590        525       160          4        10         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1000104…  <span style="text-decoration: underline;">1</span>025        770        150       105          0         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1000104…  <span style="text-decoration: underline;">1</span>135        580        325       185         35         0         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1000104…  <span style="text-decoration: underline;">1</span>550        780        585       180          0         0         0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 696 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: cvap_two &lt;dbl&gt;, cvap_other &lt;dbl&gt;</span></span>
 </code></pre></div>
