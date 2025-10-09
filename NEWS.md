@@ -1,3 +1,7 @@
+# cvap 0.1.7
+
+* Correctly allocates AIAN + Black, AIAN + White, Asian + White, and Black + White to `*_two` columns in `cvap_get()`.
+
 # cvap 0.1.6
 * Adds support for 2023 CVAP estimates. Default year updated to 2023.
 

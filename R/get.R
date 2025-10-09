@@ -48,7 +48,8 @@ cvap_get <- function(state, year = 2023, geography = 'block group', out_file = N
 
   utils::download.file(url, out_file)
 
-  out <- readr::read_rds(out_file)
+  out <- readr::read_rds(out_file) |>
+    dplyr::rename_with(.fn = function(x) gsub(pattern = 'aiain', replacement = 'aian', x = x))
 
   if (!moe) {
     out <- out |> dplyr::select(-dplyr::contains('_moe'))
@@ -58,11 +59,18 @@ cvap_get <- function(state, year = 2023, geography = 'block group', out_file = N
     out <- out |>
       dplyr::select(dplyr::any_of(c(
         'GEOID', 'cvap', 'cvap_white', 'cvap_black',
-        'cvap_hisp', 'cvap_asian', 'cvap_aian', 'cvap_nhpi', 'cvap_two'
+        'cvap_hisp', 'cvap_asian', 'cvap_aian', 'cvap_nhpi', 'cvap_two',
+        'cvap_white_aian', 'cvap_white_asian', 'cvap_white_black',
+        'cvap_black_aian'
       ))) |>
-      dplyr::rowwise() |>
-      dplyr::mutate(cvap_other = max(cvap - cvap_white - cvap_black - cvap_hisp - cvap_asian - cvap_aian - cvap_nhpi - cvap_two, 0)) |>
-      dplyr::ungroup()
+      dplyr::mutate(
+        cvap_two = cvap_two + cvap_white_aian + cvap_white_asian + cvap_white_black + cvap_black_aian,
+        cvap_other = pmax(cvap - cvap_white - cvap_black - cvap_hisp - cvap_asian - cvap_aian - cvap_nhpi - cvap_two, 0)
+      ) |>
+      dplyr::select(-dplyr::any_of(c(
+        'cvap_white_aian', 'cvap_white_asian', 'cvap_white_black',
+        'cvap_black_aian'
+      )))
     readr::write_rds(out, out_file, 'xz')
   }
 
